@@ -381,10 +381,7 @@ def complete(
 
     return {
         "ok": True
-    }
-
-
-# ---------------------------------------------------------
+    }# ---------------------------------------------------------
 # MIO AI CHAT
 # ---------------------------------------------------------
 
@@ -393,35 +390,50 @@ async def chat(r: Chat):
 
     danger = detect_danger(r.message)
 
+    # -----------------------------------------------------
+    # 1. Save USER message and CLOSE connection immediately
+    # -----------------------------------------------------
+
     conn = get_conn()
 
-    # Save user message
-    conn.execute(
-        """
-        INSERT INTO chats(
-            user_id,
-            role,
-            message
+    try:
+        conn.execute(
+            """
+            INSERT INTO chats(
+                user_id,
+                role,
+                message
+            )
+            VALUES(?,?,?)
+            """,
+            (
+                r.user_id,
+                "user",
+                r.message,
+            ),
         )
-        VALUES(?,?,?)
-        """,
-        (
-            r.user_id,
-            "user",
-            r.message,
-        ),
-    )
 
-    conn.commit()
+        conn.commit()
 
-    # Get AI response
+    finally:
+        conn.close()
+
+
+    # -----------------------------------------------------
+    # 2. Get AI response
+    # -----------------------------------------------------
+
     answer, real_ai = await reply(
         r.user_id,
         r.message,
         r.language,
     )
 
-    # Safety addition
+
+    # -----------------------------------------------------
+    # 3. Safety addition
+    # -----------------------------------------------------
+
     if danger:
 
         answer += (
@@ -431,25 +443,39 @@ async def chat(r: Chat):
             "Please do not stay alone."
         )
 
-    # Save assistant response
-    conn.execute(
-        """
-        INSERT INTO chats(
-            user_id,
-            role,
-            message
-        )
-        VALUES(?,?,?)
-        """,
-        (
-            r.user_id,
-            "assistant",
-            answer,
-        ),
-    )
 
-    conn.commit()
-    conn.close()
+    # -----------------------------------------------------
+    # 4. Save ASSISTANT response with a NEW connection
+    # -----------------------------------------------------
+
+    conn = get_conn()
+
+    try:
+        conn.execute(
+            """
+            INSERT INTO chats(
+                user_id,
+                role,
+                message
+            )
+            VALUES(?,?,?)
+            """,
+            (
+                r.user_id,
+                "assistant",
+                answer,
+            ),
+        )
+
+        conn.commit()
+
+    finally:
+        conn.close()
+
+
+    # -----------------------------------------------------
+    # 5. Return response
+    # -----------------------------------------------------
 
     return {
         "reply": answer,
