@@ -7,18 +7,19 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
 :root{--g:#123b34;--g2:#2f6b5b;--m:#e5f1eb;--bg:#fbfaf6;--mut:#71817c;--ln:#dfeae5;--gold:#d7a64b;--red:#934b44}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--g);font-family:"DM Sans",sans-serif;font-size:16px}body{font-weight:500}button,input,textarea,select{font:inherit}button{cursor:pointer}
-.nav{min-height:72px;display:flex;align-items:center;gap:8px;padding:10px 4%;position:sticky;top:0;background:#fbfaf6f5;backdrop-filter:blur(16px);border-bottom:1px solid var(--ln);z-index:40;flex-wrap:nowrap}.brandmark{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:-.3px;color:var(--g)}.brandmark-icon{width:42px;height:42px;border-radius:13px;background:var(--g);color:#d7a64b;display:grid;place-items:center;font-size:23px;box-shadow:0 7px 18px #123b3420}.brandmark b{color:var(--gold)}.logo{display:flex;align-items:center}.nav .logo{margin-right:auto}.nav-main{display:flex;align-items:center;gap:4px}.nav-main button,.menu-btn{border:0;background:transparent;color:var(--mut);font-size:15px;font-weight:900;padding:11px 13px;border-radius:12px;cursor:pointer}.nav-main button:hover,.nav-main button.on,.menu-btn:hover{background:var(--m);color:var(--g)}.menu-wrap{position:relative}.menu-btn{display:flex;align-items:center;gap:9px}.hamburger{width:19px;height:14px;display:flex;flex-direction:column;justify-content:space-between}.hamburger i{display:block;height:2px;width:100%;background:currentColor;border-radius:2px}.menu-panel{position:absolute;right:0;top:calc(100% + 10px);width:230px;background:#fff;border:1px solid var(--ln);border-radius:18px;padding:8px;box-shadow:0 22px 60px #123b3420;display:none}.menu-panel.open{display:block;animation:menuPop .18s ease}.menu-panel button{display:flex;width:100%;align-items:center;gap:10px;border:0;background:transparent;color:var(--g);font-size:15px;font-weight:850;padding:12px 13px;border-radius:11px;text-align:left;cursor:pointer}.menu-panel button:hover{background:var(--m)}@keyframes menuPop{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
-.wrap{width:90%;max-width:1160px;margin:0 auto}.view{display:block;padding:42px 0;min-height:calc(100vh - 72px)}.hero{min-height:600px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.ey{display:inline-block;background:var(--m);padding:8px 12px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:1px}.hero h1{font:800 57px/1.04 Manrope;margin:16px 0}.hero h1 span{color:var(--g2)}.hero p,.mut{color:var(--mut);line-height:1.7;font-size:16px}.orb{width:310px;height:310px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:95px;background:radial-gradient(circle,#f5e6c5,#d8ece4);box-shadow:0 30px 80px #123b3420}.btn{border:0;border-radius:13px;padding:13px 19px;font-weight:900;font-size:15px}.primary{background:var(--g);color:#fff}.soft{background:#fff;color:var(--g);border:1px solid var(--ln)}.danger{background:#fff0ee;color:var(--red);border:1px solid #edd0cc}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.head{margin-bottom:24px}.head h2{font:800 43px Manrope;margin:10px 0;letter-spacing:-.7px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#fff;border:1px solid var(--ln);border-radius:21px;padding:21px;box-shadow:0 20px 60px #123b3410}.card h3{margin:10px 0;font-size:21px}.card p{color:var(--mut);line-height:1.65;font-size:15px}.tag{display:inline-block;font-size:12px;font-weight:800;padding:6px 9px;background:var(--m);border-radius:20px}.field{margin:13px 0}.field label{font-size:15px;font-weight:900;display:block;margin-bottom:8px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--ln);border-radius:12px;padding:14px;background:#fff;color:var(--g);font-size:16px}.field textarea{min-height:130px;resize:vertical}.error{background:#fff0ee;color:var(--red);padding:10px;border-radius:12px;margin:10px 0}.success{background:#e9f6ef;color:#245b4c;padding:10px;border-radius:12px;margin:10px 0}.small{font-size:13px;color:var(--mut);line-height:1.55}
-.mio-head{display:flex;align-items:center;gap:14px}.mio-avatar{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#e5f1eb,#f6ead0);display:grid;place-items:center;font-size:32px;box-shadow:0 10px 25px #123b3412}.chatbox{max-width:900px;margin:auto}.msgs{height:470px;overflow:auto;background:#f2f7f4;border:1px solid var(--ln);border-radius:22px;padding:18px}.msg{max-width:78%;padding:12px 15px;border-radius:17px;margin:9px 0;white-space:pre-wrap;line-height:1.6}.msg.u{margin-left:auto;background:var(--g);color:#fff}.msg.m{background:#fff;border:1px solid var(--ln)}.msg-actions{display:flex;gap:6px;margin-top:7px}.chatbar{display:flex;gap:8px;margin-top:10px}.chatbar input{flex:1;border:1px solid var(--ln);border-radius:14px;padding:13px}.micbtn{min-width:52px;border:1px solid var(--ln);background:#fff;color:var(--g);border-radius:14px;font-size:18px;font-weight:800}.micbtn.listening{background:#e9f6ef;border-color:#78aa99}.voicehint{font-size:11px;color:var(--mut);margin-top:6px}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--g);font-family:"DM Sans",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.nav{min-height:72px;display:flex;align-items:center;gap:7px;padding:10px 4%;position:sticky;top:0;background:#fbfaf6f2;backdrop-filter:blur(14px);border-bottom:1px solid var(--ln);z-index:20;flex-wrap:wrap}
+.logo img{height:48px;width:auto;display:block}.nav .logo{margin-right:auto}.nav button{border:0;background:transparent;color:var(--mut);font-weight:700;padding:9px 11px;border-radius:11px}.nav button:hover,.nav button.on{background:var(--m);color:var(--g)}
+.wrap{width:90%;max-width:1160px;margin:0 auto}.view{display:block;padding:42px 0;min-height:calc(100vh - 72px)}.hero{min-height:600px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.ey{display:inline-block;background:var(--m);padding:8px 12px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:1px}.hero h1{font:800 57px/1.04 Manrope;margin:16px 0}.hero h1 span{color:var(--g2)}.hero p,.mut{color:var(--mut);line-height:1.7}.orb{width:310px;height:310px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:95px;background:radial-gradient(circle,#f5e6c5,#d8ece4);box-shadow:0 30px 80px #123b3420}.btn{border:0;border-radius:13px;padding:12px 17px;font-weight:800}.primary{background:var(--g);color:#fff}.soft{background:#fff;color:var(--g);border:1px solid var(--ln)}.danger{background:#fff0ee;color:var(--red);border:1px solid #edd0cc}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.head{margin-bottom:24px}.head h2{font:800 40px Manrope;margin:10px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#fff;border:1px solid var(--ln);border-radius:21px;padding:21px;box-shadow:0 20px 60px #123b3410}.card h3{margin:9px 0}.card p{color:var(--mut);line-height:1.6}.tag{display:inline-block;font-size:11px;font-weight:800;padding:6px 9px;background:var(--m);border-radius:20px}.field{margin:13px 0}.field label{font-size:13px;font-weight:800;display:block;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--ln);border-radius:12px;padding:12px;background:#fff;color:var(--g)}.field textarea{min-height:130px;resize:vertical}.error{background:#fff0ee;color:var(--red);padding:10px;border-radius:12px;margin:10px 0}.success{background:#e9f6ef;color:#245b4c;padding:10px;border-radius:12px;margin:10px 0}.small{font-size:12px;color:var(--mut)}
+.chatbox{max-width:900px;margin:auto}.msgs{height:470px;overflow:auto;background:#f2f7f4;border:1px solid var(--ln);border-radius:22px;padding:18px}.msg{max-width:78%;padding:12px 15px;border-radius:17px;margin:9px 0;white-space:pre-wrap;line-height:1.6}.msg.u{margin-left:auto;background:var(--g);color:#fff}.msg.m{background:#fff;border:1px solid var(--ln)}.msg-actions{display:flex;gap:6px;margin-top:7px}.chatbar{display:flex;gap:8px;margin-top:10px}.chatbar input{flex:1;border:1px solid var(--ln);border-radius:14px;padding:13px}.micbtn{min-width:52px;border:1px solid var(--ln);background:#fff;color:var(--g);border-radius:14px;font-size:18px;font-weight:800}.micbtn.listening{background:#e9f6ef;border-color:#78aa99}.voicehint{font-size:11px;color:var(--mut);margin-top:6px}
 .music{background:linear-gradient(135deg,#153f36,#2f6b5b);color:#fff;border-radius:24px;padding:26px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.music p{color:#dbe9e4}.timer{font:800 45px Manrope;margin:10px 0}.sessions{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.session{background:#fff;border:1px solid var(--ln);border-radius:20px;padding:18px}.audio-status{font-size:12px;color:#dbe9e4;margin-top:10px}.audio-fallback{background:#fff8e7;color:#76551d;border-radius:12px;padding:9px;margin-top:9px;font-size:12px}
-.profile{display:grid;grid-template-columns:1fr 1fr;gap:16px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.stats strong{font:800 29px Manrope;display:block}.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}.brand{padding:9%;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#e5f1eb,#fbfaf6)}.brand h1{font:800 53px Manrope}.authbox{display:flex;align-items:center;justify-content:center;padding:25px}.authcard{width:min(560px,100%);background:#fff;border:1px solid var(--ln);border-radius:25px;padding:28px;box-shadow:0 20px 70px #123b3410}.choicegrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.choice{border:1px solid var(--ln);background:#fff;padding:12px;border-radius:13px;text-align:left}.choice.sel{background:var(--m);border-color:#78aa99}.mood-grid{grid-template-columns:repeat(3,1fr)}.mood-choice{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:850;min-height:58px}.mood-emoji{width:34px;height:34px;border-radius:11px;background:#f1f6f3;display:grid;place-items:center;font-size:21px;flex:0 0 auto}.mood-choice.sel .mood-emoji{background:#fff}.checkin-card{padding:24px}.steps{display:flex;gap:5px;margin-bottom:20px}.steps i{height:5px;flex:1;background:#e6efeb;border-radius:9px}.steps i.on{background:var(--g)}
+.profile{display:grid;grid-template-columns:1fr 1fr;gap:16px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.stats strong{font:800 29px Manrope;display:block}.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}.brand{padding:9%;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#e5f1eb,#fbfaf6)}.brand h1{font:800 53px Manrope}.authbox{display:flex;align-items:center;justify-content:center;padding:25px}.authcard{width:min(560px,100%);background:#fff;border:1px solid var(--ln);border-radius:25px;padding:28px;box-shadow:0 20px 70px #123b3410}.choicegrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.choice{border:1px solid var(--ln);background:#fff;padding:12px;border-radius:13px;text-align:left}.choice.sel{background:var(--m);border-color:#78aa99}.steps{display:flex;gap:5px;margin-bottom:20px}.steps i{height:5px;flex:1;background:#e6efeb;border-radius:9px}.steps i.on{background:var(--g)}
 .avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.avatar{height:55px;border:1px solid var(--ln);border-radius:15px;background:#fff;font-size:25px}.avatar.sel{background:var(--m);border-color:#78aa99;box-shadow:inset 0 0 0 2px var(--g)}
 .single-recommend{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--ln);border-radius:22px;padding:20px;box-shadow:0 16px 50px #123b340d}.single-rec-icon{width:62px;height:62px;border-radius:18px;background:var(--m);display:grid;place-items:center;font-size:30px;flex:0 0 auto}
 .game-tools{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.game-tools input{flex:1;min-width:260px;border:1px solid var(--ln);border-radius:14px;padding:13px 15px;background:#fff}.game-filters{display:flex;gap:7px;flex-wrap:wrap}.filter-chip{border:1px solid var(--ln);background:#fff;color:var(--mut);padding:9px 12px;border-radius:999px;font-weight:800;font-size:11px}.filter-chip.on{background:var(--g);color:#fff}.mega-game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.mega-game-card{background:#fff;border:1px solid var(--ln);border-radius:20px;padding:18px;min-height:235px;display:flex;flex-direction:column;box-shadow:0 14px 45px #123b3409}.mega-game-card:hover{transform:translateY(-3px);box-shadow:0 24px 70px #123b3418}.mega-icon{font-size:34px}.mega-top{display:flex;gap:6px;margin-top:10px}.duo-tag{font-size:10px;font-weight:900;padding:6px 8px;border-radius:999px;background:#f6ead0;color:#76551d}.mega-game-card h3{font-size:17px;margin:10px 0 6px}.mega-game-card p{font-size:13px;color:var(--mut);line-height:1.5;margin:0 0 12px}.mega-actions{display:flex;gap:7px;margin-top:auto}.mega-actions .btn{flex:1}.mega-arena{background:#f2f7f4;border:1px solid var(--ln);border-radius:24px;padding:22px;min-height:470px}.mega-scorebar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--ln);padding:12px 15px;border-radius:14px;font-weight:800;margin-bottom:20px}.mega-play{min-height:300px}.instruction{text-align:center;color:var(--mut);margin-bottom:20px}.mega-target{position:absolute;left:40%;top:70px;width:85px;height:85px;border:0;border-radius:50%;background:var(--g);color:#fff;font-size:28px;font-weight:900}.mega-react{display:block;margin:60px auto;width:min(520px,90%);height:180px;border:0;border-radius:24px;background:#193d35;color:#fff;font:800 36px Manrope}.mega-seq{height:90px;display:grid;place-items:center;font:800 35px Manrope;letter-spacing:5px;background:#fff;border-radius:18px;margin-bottom:15px}.mega-input{display:block;width:min(360px,100%);margin:12px auto;padding:14px;border:1px solid var(--ln);border-radius:13px;text-align:center;font-size:18px;background:#fff}.math-q{text-align:center;font:800 38px Manrope;padding:35px 10px;background:#fff;border-radius:20px;margin-bottom:15px}.focus-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:600px;margin:20px auto}.focus-cell{height:58px;border:1px solid var(--ln);border-radius:12px;background:#fff;font-size:24px;color:var(--g)}.color-word{text-align:center;font:800 54px Manrope;padding:35px 10px;background:#fff;border-radius:20px}.mega-result{text-align:center;min-height:28px}.calm-circle{width:170px;height:170px;border-radius:50%;margin:45px auto 25px;background:var(--m);display:grid;place-items:center;font:800 55px Manrope;box-shadow:0 0 0 18px #eaf4ef,0 0 0 36px #f3f8f5}
 .backbar{display:flex;gap:8px;margin:0 auto 10px;width:90%;max-width:1160px}.backbtn{border:1px solid var(--ln);background:#fff;color:var(--g);padding:9px 12px;border-radius:11px;font-weight:800}
 .overlay{position:fixed;inset:0;background:#123b3475;backdrop-filter:blur(7px);display:grid;place-items:center;z-index:100;padding:20px}.tour{width:min(720px,100%);background:#fff;border-radius:28px;padding:28px;box-shadow:0 30px 100px #0003;animation:pop .35s ease}.tour-art{height:210px;border-radius:22px;background:linear-gradient(135deg,#e5f1eb,#f6ead0);display:grid;place-items:center;font-size:82px;animation:breathe 2.5s ease-in-out infinite}.tour h2{font:800 30px Manrope}.tour-dots{display:flex;gap:6px}.tour-dots i{width:8px;height:8px;border-radius:50%;background:#dfeae5}.tour-dots i.on{background:var(--g)}@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}@keyframes breathe{50%{transform:scale(1.04)}}
-@media(max-width:1000px){.mega-game-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:850px){.hero,.auth,.profile{grid-template-columns:1fr}.grid,.sessions{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.hero h1{font-size:42px}.orb{width:230px;height:230px;font-size:70px}.nav{position:relative}}@media(max-width:760px){.mega-game-grid{grid-template-columns:repeat(2,1fr)}.single-recommend{align-items:flex-start}.focus-wall{grid-template-columns:repeat(4,1fr)}}@media(max-width:550px){.grid,.sessions,.choicegrid,.mood-grid{grid-template-columns:1fr}.music{grid-template-columns:1fr}.mega-game-grid{grid-template-columns:1fr}.avatar-grid{grid-template-columns:repeat(4,1fr)}.chatbar{flex-wrap:wrap}.chatbar input{min-width:100%}}
+@media(max-width:1000px){.mega-game-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:850px){.hero,.auth,.profile{grid-template-columns:1fr}.grid,.sessions{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.hero h1{font-size:42px}.orb{width:230px;height:230px;font-size:70px}.nav{position:relative}}@media(max-width:760px){.mega-game-grid{grid-template-columns:repeat(2,1fr)}.single-recommend{align-items:flex-start}.focus-wall{grid-template-columns:repeat(4,1fr)}}@media(max-width:550px){.grid,.sessions,.choicegrid{grid-template-columns:1fr}.music{grid-template-columns:1fr}.mega-game-grid{grid-template-columns:1fr}.avatar-grid{grid-template-columns:repeat(4,1fr)}.chatbar{flex-wrap:wrap}.chatbar input{min-width:100%}}
 </style>
 </head>
 <body>
@@ -30,7 +31,6 @@ const API='https://backend-ua3z.onrender.com';
 const SESSION_KEY='small_steps_session_v3';
 const INTRO_KEY='small_steps_intro_seen_v3';
 let user=null,currentView='home',viewHistory=[],tm=null,left=0,player=null,ambientCtx=null,ambientOsc=null;
-let checkinRequired=false;
 let recognition=null,micListening=false,chatHistory=[],gameTimer=null,gameCleanup=null,activeGameMode='solo';
 
 const S=[
@@ -82,7 +82,7 @@ async function api(path,options={},timeout=22000){
 function saveSession(){
   if(!user)return;
   localStorage.setItem(SESSION_KEY,JSON.stringify({
-    user,language:user.language||window.appLanguage||'English',time_spend:window.smallStepsTime||'10 minutes',avatar:user.avatar||'🌿',checkinRequired:!!checkinRequired
+    user,language:user.language||window.appLanguage||'English',time_spend:window.smallStepsTime||'10 minutes',avatar:user.avatar||'🌿'
   }));
 }
 function loadSession(){
@@ -91,7 +91,7 @@ function loadSession(){
 function clearSession(){localStorage.removeItem(SESSION_KEY);}
 
 function auth(step=0,state={}){
-  document.getElementById('root').innerHTML='<div class="auth"><div class="brand"><div class="logo"><div class="brandmark"><span class="brandmark-icon">↗</span><span>Small <b>Steps</b></span></div></div><span class="ey">SMALL STEPS</span><h1>A calmer place to take your next small step.</h1><p class="mut">Talk, check in, meditate, listen, play, and find one useful thing that helps.</p></div><div class="authbox"><div class="authcard" id="ac"></div></div></div>';
+  document.getElementById('root').innerHTML='<div class="auth"><div class="brand"><div class="logo"><img src="assets/small-steps-logo.png" alt="Small Steps"></div><span class="ey">SMALL STEPS</span><h1>A calmer place to take your next small step.</h1><p class="mut">Talk, check in, meditate, listen, play, and find one useful thing that helps.</p></div><div class="authbox"><div class="authcard" id="ac"></div></div></div>';
   renderAuth(step,state);
 }
 let R={};
@@ -108,7 +108,7 @@ function renderAuth(step,state={}){
   }else{
     const total=10;
     b='<div class="steps">'+Array.from({length:total},(_,i)=>'<i class="'+(i<step?'on':'')+'"></i>').join('')+'</div>';
-    if(step===1)b+='<h2>Create your account</h2><p class="small">Step 1 of 10</p><div id="regerr"></div><div class="field"><label>Full name</label><input id="rn" value="'+esc(R.name||'')+'"></div><div class="field"><label>Email address</label><input id="re" type="email" value="'+esc(R.email||'')+'"></div><div class="field"><label>Password</label><input id="rp" type="password" minlength="6"><div class="small">Minimum 6 characters.</div></div><div class="field"><label>Confirm password</label><input id="rc" type="password" minlength="6"></div><button class="btn primary" onclick="nextRegister(2)">Continue</button>';
+    if(step===1)b+='<h2>Create your account</h2><p class="small">Step 1 of 10</p><div id="regerr"></div><div class="field"><label>Full name</label><input id="rn" value="'+esc(R.name||'')+'"></div><div class="field"><label>Email</label><input id="re" type="email" value="'+esc(R.email||'')+'"></div><div class="field"><label>Password</label><input id="rp" type="password" minlength="6"><div class="small">Minimum 6 characters.</div></div><div class="field"><label>Confirm password</label><input id="rc" type="password" minlength="6"></div><button class="btn primary" onclick="nextRegister(2)">Continue</button>';
     if(step===2)b+='<h2>Choose your language</h2><p class="small">Mio will use this preference when possible.</p><div class="choicegrid">'+LANGS.map(x=>'<button class="choice '+(R.language===x?'sel':'')+'" onclick="pickReg(\'language\',\''+x+'\',3)">'+(x==='English'?'🇬🇧':x==='Hindi'?'🇮🇳':'💬')+' '+x+'</button>').join('')+'</div>';
     if(step===3)b+='<h2>Pick your avatar</h2><p class="small">You can change this later from Profile.</p><div class="avatar-grid">'+AVATARS.map(x=>'<button class="avatar '+(R.avatar===x?'sel':'')+'" onclick="pickAvatar(\''+x+'\',4)">'+x+'</button>').join('')+'</div>';
     if(step===4)b+='<h2>What usually stresses you?</h2><p class="small">Select all that apply.</p><div class="choicegrid">'+['Money','Work','School / College','Health','Relationships','Family responsibilities','Social life','Future / Career'].map(x=>'<button class="choice '+(R.stress?.includes(x)?'sel':'')+'" onclick="toggleReg(this,\'stress\',\''+x+'\')">'+x+'</button>').join('')+'</div><div class="field"><label>Other cause <span class="small">(optional)</span></label><input id="os" value="'+esc(R.other||'')+'"></div><button class="btn primary" onclick="nextRegister(5)">Continue</button>';
@@ -117,7 +117,7 @@ function renderAuth(step,state={}){
     if(step===7)b+='<h2>What is your meditation experience?</h2><div class="choicegrid">'+['Beginner','Experienced','None'].map(x=>'<button class="choice '+(R.me===x?'sel':'')+'" onclick="pickReg(\'me\',\''+x+'\',8)">'+x+'</button>').join('')+'</div>';
     if(step===8)b+='<h2>What should Small Steps help with?</h2><div class="choicegrid">'+['Managing stress','Better sleep','Staying focused','Overthinking','Healthy habits','Feeling less lonely','Study pressure','Just exploring'].map(x=>'<button class="choice '+(R.goals?.includes(x)?'sel':'')+'" onclick="toggleReg(this,\'goals\',\''+x+'\')">'+x+'</button>').join('')+'</div><button class="btn primary" onclick="nextRegister(9)">Continue</button>';
     if(step===9)b+='<h2>How much time do you want to spend?</h2><p class="mut">This keeps recommendations realistic.</p><div class="choicegrid">'+['5 minutes','10 minutes','15 minutes','20 minutes','30 minutes','45 minutes'].map(x=>'<button class="choice '+(R.time_spend===x?'sel':'')+'" onclick="pickReg(\'time_spend\',\''+x+'\',10)">⏱ '+x+'</button>').join('')+'</div>';
-    if(step===10)b='<h2>Are you ready to take your first small step?</h2><p class="mut">Your account is ready. After you create it, we will take you straight to your first daily check-in.</p><div id="regerr"></div><button class="btn primary" id="createAccountBtn" onclick="finishRegister()">Create my account</button>';
+    if(step===10)b='<h2>You are ready 🌿</h2><p class="mut">Your preferences are saved with your account. Next, we will show you a short animated tour of the app.</p><button class="btn primary" onclick="finishRegister()">Create account</button>';
   }
   c.innerHTML=b;
 }
@@ -127,67 +127,32 @@ function pickAvatar(val,next){R.avatar=val;renderAuth(next,R);}
 function nextRegister(next){
   if(next===2){
     R.name=(qs('rn')?.value||'').trim();R.email=(qs('re')?.value||'').trim();R.pass=qs('rp')?.value||'';R.pass2=qs('rc')?.value||'';
-    const e=qs('regerr');
-    const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(R.email)&&!R.email.includes('@@')&&!R.email.includes('..');
-    if(!R.name||!R.email){showError(e,'Please enter your full name and email address.');return}
-    if(!emailOk){showError(e,'Please enter a valid email address, such as name@example.com.');return}
-    if(R.pass.length<6){showError(e,'Your password must be at least 6 characters long.');return}
+    const e=qs('regerr');if(!R.name||!R.email){showError(e,'Please complete your name and email.');return}
+    if(R.pass.length<6){showError(e,'Password must be at least 6 characters.');return}
     if(R.pass!==R.pass2){showError(e,'Passwords do not match.');return}
   }
   if(next===5)R.other=(qs('os')?.value||'').trim();
   renderAuth(next,R);
 }
 async function finishRegister(){
-  const e=qs('regerr');
-  const btn=qs('createAccountBtn');
-  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(R.email||'')&&!String(R.email||'').includes('@@')&&!String(R.email||'').includes('..');
-  if(!R.name||!R.email||!R.pass||!R.pass2){showError(e,'Please complete all required account fields.');return}
-  if(!emailOk){showError(e,'Please enter a valid email address, such as name@example.com.');return}
-  if(R.pass.length<6){showError(e,'Your password must be at least 6 characters long.');return}
-  if(R.pass!==R.pass2){showError(e,'Your passwords do not match.');return}
-  if(btn){btn.disabled=true;btn.textContent='Creating your account…'}
-  if(e)e.innerHTML='';
   try{
-    const payload={
-      full_name:R.name,
-      email:R.email,
-      password:R.pass,
-      confirm_password:R.pass2,
-      user_type:'student',
-      stress_sources:R.stress||[],
-      other_stress:R.other||null,
-      meditation_time:R.mt||'Not set',
-      recent_feeling:R.rf||'Indifferent',
-      meditation_experience:R.me||'None',
-      goals:R.goals||[],
-      support_preference:'A mixture of everything',
-      language:R.language||'English'
-    };
+    const payload={full_name:R.name,email:R.email,password:R.pass,confirm_password:R.pass2,user_type:'General User',
+      stress_sources:R.stress||[],other_stress:R.other||null,meditation_time:R.mt||'Not set',recent_feeling:R.rf||'Indifferent',
+      meditation_experience:R.me||'None',goals:R.goals||[],support_preference:'A mixture of everything'};
     const d=await api('/api/register',{method:'POST',body:JSON.stringify(payload)});
-    user=d.user||{full_name:R.name,email:R.email,user_type:'student'};
-    user.language=R.language||'English';
-    user.avatar=R.avatar||'🌿';
-    user.time_spend=R.time_spend||'10 minutes';
-    checkinRequired=true;
-    window.appLanguage=user.language;
-    window.smallStepsTime=user.time_spend;
-    saveSession();
-    app(true);
-  }catch(e){
-    showError(qs('regerr'),e.message||'We could not create your account. Please try again.');
-    if(btn){btn.disabled=false;btn.textContent='Create my account'}
-  }
+    user=d.user||{full_name:R.name,email:R.email};
+    user.language=R.language||'English';user.avatar=R.avatar||'🌿';user.time_spend=R.time_spend||'10 minutes';
+    window.appLanguage=user.language;window.smallStepsTime=user.time_spend;saveSession();
+    app();setTimeout(()=>showIntroTour(true),300);
+  }catch(e){alert(e.message)}
 }
-
 async function login(){
   const email=(qs('em')?.value||'').trim(),password=qs('pw')?.value||'';
-  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&!email.includes('@@')&&!email.includes('..');
-  if(!email||!password){showError(qs('er'),'Please enter your email address and password.');return}
-  if(!emailOk){showError(qs('er'),'Please enter a valid email address, such as name@example.com.');return}
+  if(!email||!password){showError(qs('er'),'Enter email and password.');return}
   try{
     const d=await api('/api/login',{method:'POST',body:JSON.stringify({email,password})});
     user=d.user||{email};user.language=user.language||'English';user.avatar=user.avatar||'🌿';
-    window.appLanguage=user.language;window.smallStepsTime=user.time_spend||'10 minutes';checkinRequired=true;saveSession();app(true);
+    window.appLanguage=user.language;window.smallStepsTime=user.time_spend||'10 minutes';saveSession();app();
   }catch(e){
     const saved=loadSession();
     if(saved?.user?.email?.toLowerCase()===email.toLowerCase()){
@@ -196,24 +161,15 @@ async function login(){
     }else showError(qs('er'),e.message);
   }
 }
-function restoreSaved(){const s=loadSession();if(!s?.user)return;user=s.user;window.appLanguage=s.language||'English';window.smallStepsTime=s.time_spend||'10 minutes';checkinRequired=!!s.checkinRequired;saveSession();app(checkinRequired);}
+function restoreSaved(){const s=loadSession();if(!s?.user)return;user=s.user;window.appLanguage=s.language||'English';window.smallStepsTime=s.time_spend||'10 minutes';app();}
 async function forgot(){try{const d=await api('/api/forgot-password',{method:'POST',body:JSON.stringify({email:qs('fe').value.trim()})});showError(qs('er'),d.message||'If the account exists, reset instructions were requested.')}catch(e){showError(qs('er'),e.message)}}
 
-function app(forceCheck=false){
-  document.getElementById('root').innerHTML='<nav class="nav"><div class="logo"><div class="brandmark"><span class="brandmark-icon">↗</span><span>Small <b>Steps</b></span></div></div><div class="nav-main"><button onclick="navigate(\'home\')">⌂ Home</button><button onclick="navigate(\'check\')">✓ Check-in</button><button onclick="navigate(\'chat\')">◉ Talk with Mio</button></div><div class="menu-wrap"><button class="menu-btn" onclick="toggleMenu(event)" aria-label="Open menu"><span class="hamburger"><i></i><i></i><i></i></span><span>Menu</span></button><div class="menu-panel" id="menuPanel"><button onclick="menuNavigate(\'activities\')">✨ Activities</button><button onclick="menuNavigate(\'games\')">🎮 Games</button><button onclick="menuNavigate(\'med\')">🧘 Meditation</button><button onclick="menuNavigate(\'dash\')">📊 Dashboard</button><button onclick="menuNavigate(\'profile\')">👤 Profile</button><button onclick="logout();closeMenu()">🚪 Log out</button></div></div></nav><main id="main"></main>';
-  go(forceCheck||checkinRequired?'check':'home');
+function app(){
+  document.getElementById('root').innerHTML='<nav class="nav"><div class="logo"><img src="assets/small-steps-logo.png" alt="Small Steps"></div><button onclick="navigate(\'home\')">Home</button><button onclick="navigate(\'check\')">Check-in</button><button onclick="navigate(\'chat\')">Talk with Mio</button><button onclick="navigate(\'med\')">Meditation</button><button onclick="navigate(\'activities\')">Activities</button><button onclick="navigate(\'games\')">Games</button><button onclick="navigate(\'dash\')">Dashboard</button><button onclick="navigate(\'profile\')">Profile</button><button onclick="logout()">Log out</button></nav><main id="main"></main>';
+  go('home');
   warmBackend();
 }
-function toggleMenu(e){e?.stopPropagation();const p=qs('menuPanel');if(p)p.classList.toggle('open')}
-function closeMenu(){const p=qs('menuPanel');if(p)p.classList.remove('open')}
-function menuNavigate(v){closeMenu();navigate(v)}
-document.addEventListener('click',e=>{if(!e.target.closest('.menu-wrap'))closeMenu()});
-
-function navigate(v){
-  if(checkinRequired&&v!=='check'){toast('Start with your check-in. You only need to complete it once for this session.');currentView='check';go('check');return}
-  if(currentView&&currentView!==v)viewHistory.push(currentView);currentView=v;go(v,true);
-}
-
+function navigate(v){if(currentView&&currentView!==v)viewHistory.push(currentView);currentView=v;go(v,true);}
 function goBack(){const prev=viewHistory.pop()||'home';currentView=prev;go(prev,true);}
 function addBackButton(){if(currentView==='home')return;const m=qs('main');if(!m||m.querySelector('.backbar'))return;m.insertAdjacentHTML('afterbegin','<div class="backbar"><button class="backbtn" onclick="goBack()">← Back</button><button class="backbtn" onclick="navigate(\'home\')">⌂ Home</button></div>');}
 function go(v,internal=false){
@@ -224,13 +180,7 @@ function go(v,internal=false){
   if(v==='activities'){activities();addBackButton();return}if(v==='games'){games();addBackButton();return}if(v==='dash'){dash();addBackButton();return}if(v==='profile'){profile();addBackButton();return}
 }
 
-function check(){
-  const moods=[['😣','Stressed'],['😴','Tired'],['😕','Confused'],['😟','Anxious'],['😔','Sad'],['😤','Angry'],['😵','Overwhelmed'],['🙂','Good'],['😌','Calm'],['😊','Happy'],['🤍','Lonely'],['🔥','Frustrated']];
-  qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">CHECK-IN</span><h2>How are you feeling today?</h2><p class="mut">Pick the feeling that is closest to you, or tell Mio in your own words.</p></div><div class="card checkin-card"><div class="choicegrid mood-grid" id="moodChoices">'+moods.map(([emoji,label])=>'<button class="choice mood-choice" onclick="pickMoodChoice(this,\''+label+'\')"><span class="mood-emoji">'+emoji+'</span><span>'+label+'</span></button>').join('')+'</div><div class="field"><label>Want to say more?</label><textarea id="ct" placeholder="Write whatever is on your mind..."></textarea><div class="actions"><button class="btn soft" onclick="toggleCheckMic()">🎙 Speak instead</button><span id="checkMicStatus" class="small"></span></div></div><button class="btn primary" onclick="analyze()">Continue</button><div id="res"></div></div></div></section>';
-}
-function pickMoodChoice(btn,mood){document.querySelectorAll('#moodChoices .choice').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel');const ta=qs('ct');if(ta&&!ta.value)ta.value='I feel '+mood.toLowerCase()+' today.';}
-function toggleCheckMic(){const SR=getSpeechRecognition();if(!SR){qs('checkMicStatus').textContent='Voice input is not supported in this browser.';return}if(micListening){recognition?.stop();return}recognition=new SR();recognition.lang=(window.appLanguage==='Hindi'?'hi-IN':'en-IN');recognition.interimResults=false;recognition.continuous=false;recognition.onstart=()=>{micListening=true;qs('checkMicStatus').textContent='Listening…'};recognition.onresult=e=>{qs('ct').value=(qs('ct').value+' '+e.results[0][0].transcript).trim()};recognition.onerror=()=>{qs('checkMicStatus').textContent='Could not hear that. Please try again.'};recognition.onend=()=>{micListening=false;if(qs('checkMicStatus'))qs('checkMicStatus').textContent=''};recognition.start()}
-
+function check(){qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">DAILY CHECK-IN</span><h2>What is going on today?</h2><p class="mut">Tell Small Steps what you are feeling. It will suggest one useful next step.</p></div><div class="card"><div class="field"><label>How are you feeling?</label><textarea id="ct" placeholder="I am stressed because... / I feel bored... / Today was good... / I am angry..."></textarea></div><button class="btn primary" onclick="analyze()">Understand my mood</button><div id="res"></div></div></div></section>'}
 function localRecommendation(mood,message){
   const m=(mood||'').toLowerCase(),t=(message||'').toLowerCase();
   if(/angry|mad|rage|gussa/.test(m+' '+t))return {icon:'🍃',type:'Activity',name:'Anger Pause',open:'activities',reason:'A short reset to create space between the trigger and your next response.',duration:'3 min'};
@@ -246,14 +196,13 @@ async function analyze(){
     const d=await api('/api/analyze',{method:'POST',body:JSON.stringify({user_id:user.id,message:msg,count:6})});
     if(d.safety_alert){qs('res').innerHTML='<div class="error"><b>You deserve immediate human support.</b><br>If you may be in immediate danger, contact a trusted person and local emergency/crisis support now.</div>';return}
     const rec=localRecommendation(d.mood,msg);
-    qs('res').innerHTML='<div style="margin-top:20px"><span class="tag">Detected: '+esc(d.mood||'neutral')+'</span><h3>Your one small step</h3><article class="single-recommend"><div class="single-rec-icon">'+rec.icon+'</div><div><span class="tag">'+esc(rec.type)+'</span><h4>'+esc(rec.name)+'</h4><p class="mut">'+esc(rec.reason)+'</p><p class="small">Suggested time: <b>'+esc(rec.duration)+'</b></p><button class="btn primary" onclick="openRecommendation(\''+rec.open+'\')">Start now</button></div></article><div class="actions"><button class="btn soft" onclick="finishCheckin()">✓ Complete check-in & continue</button></div></div>';
+    qs('res').innerHTML='<div style="margin-top:20px"><span class="tag">Detected: '+esc(d.mood||'neutral')+'</span><h3>Your one small step</h3><article class="single-recommend"><div class="single-rec-icon">'+rec.icon+'</div><div><span class="tag">'+esc(rec.type)+'</span><h4>'+esc(rec.name)+'</h4><p class="mut">'+esc(rec.reason)+'</p><p class="small">Suggested time: <b>'+esc(rec.duration)+'</b></p><button class="btn primary" onclick="openRecommendation(\''+rec.open+'\')">Start now</button></div></article></div>';
   }catch(e){showError(qs('res'),e.message)}
 }
 function openRecommendation(type){navigate(type)}
-function finishCheckin(){checkinRequired=false;saveSession();currentView='home';viewHistory=[];go('home');toast('Check-in saved. Keep going, one small step at a time.');}
 
 function chat(){
-  qs('main').innerHTML='<section class="view"><div class="wrap chatbox"><div class="head"><div class="mio-head"><div class="mio-avatar">'+esc(user?.avatar||'🌿')+'</div><div><span class="ey">TALK WITH MIO</span><h2>Talk with Mio</h2></div></div><p class="mut">Tell Mio what is on your mind. You can type or speak.</p></div><div class="msgs" id="msgs"><div class="msg m">Hey '+esc((user?.full_name||'there').split(' ')[0])+'. What is on your mind?</div></div><div class="chatbar"><input id="ci" placeholder="Type anything..." onkeydown="if(event.key===\'Enter\')send()"><button class="micbtn" id="micBtn" onclick="toggleMic()">🎙</button><button class="btn primary" onclick="send()">Send</button></div><div id="voiceHint" class="voicehint">🎙 Speak to Mio. After a reply, tap 🔊 to hear it aloud.</div></div></section>';
+  qs('main').innerHTML='<section class="view"><div class="wrap chatbox"><div class="head"><span class="ey">TALK WITH MIO</span><h2>Tell me what actually happened.</h2><p class="mut">Mio is a supportive wellness companion — not a therapist or emergency service.</p></div><div class="msgs" id="msgs"><div class="msg m">Hey '+esc((user?.full_name||'there').split(' ')[0])+'. What is on your mind?</div></div><div class="chatbar"><input id="ci" placeholder="Type anything..." onkeydown="if(event.key===\'Enter\')send()"><button class="micbtn" id="micBtn" onclick="toggleMic()">🎙</button><button class="btn primary" onclick="send()">Send</button></div><div id="voiceHint" class="voicehint">🎙 Speak to Mio. After a reply, tap 🔊 to hear it aloud.</div></div></section>';
   chatHistory=[];
 }
 function getSpeechRecognition(){return window.SpeechRecognition||window.webkitSpeechRecognition}
@@ -440,14 +389,11 @@ const ACTIVITIES=[
 ['Quiet Tea Break','Recovery','Drink something slowly without a screen. Notice temperature, taste and pace.','5 min','🍵']
 ];
 function activities(){
-  qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">ACTIVITIES</span><h2>Choose a short activity that fits the moment.</h2><p class="mut">Short guided practices for college, work, relationships, sleep, focus and everyday stress.</p></div><div class="grid">'+ACTIVITIES.map((a,i)=>'<article class="card"><div style="font-size:34px">'+a[4]+'</div><span class="tag">'+a[3]+'</span><h3>'+a[0]+'</h3><p>'+a[2]+'</p><button class="btn soft" onclick="activityRun('+i+')">Start</button></article>').join('')+'</div></div></section>';
+  qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">ADULT WELLNESS ACTIVITIES</span><h2>Useful things to do, not childish filler.</h2><p class="mut">Short guided practices for college, work, relationships, sleep, focus and everyday stress.</p></div><div class="grid">'+ACTIVITIES.map((a,i)=>'<article class="card"><div style="font-size:34px">'+a[4]+'</div><span class="tag">'+a[3]+'</span><h3>'+a[0]+'</h3><p>'+a[2]+'</p><button class="btn soft" onclick="activityRun('+i+')">Start</button></article>').join('')+'</div></div></section>';
 }
 function activityRun(i){
-  const a=ACTIVITIES[i];
-  document.body.insertAdjacentHTML('beforeend','<div class="overlay" id="activityModal"><div class="tour" style="max-width:760px"><div class="mio-head"><div class="mio-avatar">'+a[4]+'</div><div><span class="ey">'+esc(a[1])+'</span><h2>'+esc(a[0])+'</h2></div></div><p class="mut" style="font-size:17px">'+esc(a[2])+'</p><div class="card" style="text-align:center;margin-top:16px"><div class="timer" id="acttimer">00:00</div><p id="actprompt" style="font-size:18px;line-height:1.7">Start when you are ready. There is no perfect way to do this.</p><div class="actions" style="justify-content:center"><button class="btn primary" onclick="runActivity('+i+')">Start</button><button class="btn soft" onclick="closeActivityModal()">Close</button></div></div></div></div>');
+  const a=ACTIVITIES[i];qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">'+esc(a[1])+'</span><h2>'+esc(a[0])+'</h2><p class="mut">'+esc(a[2])+'</p></div><div class="card" style="max-width:760px;margin:auto;text-align:center"><div class="timer" id="acttimer">00:00</div><p id="actprompt" style="font-size:20px;line-height:1.7">Start when you are ready. You do not need to do this perfectly.</p><button class="btn primary" onclick="runActivity('+i+')">Start timer</button> <button class="btn soft" onclick="goBack()">Back</button></div></div></section>';
 }
-function closeActivityModal(){clearInterval(gameTimer);gameTimer=null;qs('activityModal')?.remove()}
-
 function runActivity(i){
   let secs=parseInt(ACTIVITIES[i][3])||2;secs*=60;clearInterval(gameTimer);const tickA=()=>{if(qs('acttimer'))qs('acttimer').textContent=String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0')};tickA();
   gameTimer=setInterval(()=>{secs--;tickA();if(secs<=0){clearInterval(gameTimer);if(qs('actprompt'))qs('actprompt').textContent='Done. Notice how you feel now.'}},1000);
@@ -476,17 +422,15 @@ function gameShell(title,g){
   qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">MENTAL FITNESS LAB</span><h2>'+esc(title)+'</h2><p class="mut">'+esc(g.desc)+'</p></div><div class="mega-arena" id="megaArena"></div><div class="actions" style="justify-content:center"><button class="btn soft" onclick="games()">← Back to games</button></div></div></section>';
 }
 function launchEngine(g){
-  const a=qs('megaArena');a.innerHTML='<div class="mega-scorebar"><span>Score: <b id="megaScore">0</b></span><span>Time: <b id="megaTime">60</b></span><span id="megaTurn">'+(activeGameMode==='duo'?'Player 1':'Solo')+'</span></div><div id="megaPlay" class="mega-play"></div><h3 id="megaResult" class="mega-result"></h3><div class="actions" style="justify-content:center"><button class="btn primary" id="megaStart">Start game</button><button class="btn soft" id="megaPause" type="button">Pause</button><button class="btn soft" type="button" onclick="games()">Exit</button></div>';
+  const a=qs('megaArena');a.innerHTML='<div class="mega-scorebar"><span>Score: <b id="megaScore">0</b></span><span>Time: <b id="megaTime">60</b></span><span id="megaTurn">'+(activeGameMode==='duo'?'Player 1':'Solo')+'</span></div><div id="megaPlay" class="mega-play"></div><h3 id="megaResult" class="mega-result"></h3><button class="btn primary" id="megaStart">Start game</button>';
   qs('megaStart').onclick=()=>runEngine(g);
 }
 function runEngine(g){
   resetGameRuntime();const area=qs('megaPlay'),result=qs('megaResult'),start=qs('megaStart'),scoreEl=()=>qs('megaScore'),timeEl=()=>qs('megaTime'),turnEl=()=>qs('megaTurn');
-  let score=0,time=60,round=0,turn=1,ended=false,paused=false;start.disabled=true;
-  qs('megaPause').onclick=()=>{paused=!paused;qs('megaPause').textContent=paused?'Resume':'Pause';areaState(paused)};
-  function areaState(p){qs('megaPlay').style.opacity=p?'.45':'1';qs('megaPlay').style.pointerEvents=p?'none':'auto';}
+  let score=0,time=60,round=0,turn=1,ended=false;start.disabled=true;
   const add=n=>{score=Math.max(0,score+n);scoreEl().textContent=score};const nextTurn=()=>{if(activeGameMode==='duo'){turn=turn===1?2:1;turnEl().textContent='Player '+turn}};
   const finish=msg=>{if(ended)return;ended=true;resetGameRuntime();result.textContent=msg;start.disabled=false;start.textContent='Play again'};
-  gameTimer=setInterval(()=>{if(paused)return;time--;timeEl().textContent=time;if(time<=0)finish((activeGameMode==='duo'?'Game over — ':'Time up — ')+score+' points')},1000);
+  gameTimer=setInterval(()=>{time--;timeEl().textContent=time;if(time<=0)finish((activeGameMode==='duo'?'Game over — ':'Time up — ')+score+' points')},1000);
   const engine=g.engine;
   if(engine==='tap')runTap(area,add,nextTurn);else if(engine==='react')runReact(area,add,nextTurn);else if(engine==='memory')runMemory(area,add,nextTurn);else if(engine==='focus')runFocus(area,add);else if(engine==='math')runMath(area,add,nextTurn);else if(engine==='word')runWord(area,add,nextTurn);else if(engine==='pattern')runPattern(area,add,nextTurn);else if(engine==='color')runColor(area,add);else if(engine==='number')runNumber(area,add,nextTurn);else runCalm(area,add);
 }
@@ -503,12 +447,12 @@ function runCalm(area,add){let count=5;area.innerHTML='<div class="calm-circle" 
 function resetGameRuntime(){if(gameTimer){clearInterval(gameTimer);gameTimer=null}if(gameCleanup){try{gameCleanup()}catch{}gameCleanup=null}}
 
 async function dash(){
-  qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">DASHBOARD</span><h2>Your progress, at a glance.</h2></div><div class="stats"><div class="card"><strong id="s1">—</strong><span class="small">Total check-ins</span></div><div class="card"><strong id="sDays">—</strong><span class="small">Check-in days</span></div><div class="card"><strong id="sStreak">—</strong><span class="small">Current streak</span></div><div class="card"><strong id="s3">—</strong><span class="small">Meditation minutes</span></div></div><div class="card" style="margin-top:15px"><h3>Keep your streak going</h3><p class="mut">A check-in counts as one small step. Come back tomorrow to build your streak.</p></div></div></section>';
-  try{const d=await api('/api/dashboard/'+user.id,{},12000);const total=Number(d.checkins||0);if(qs('s1'))qs('s1').textContent=total;if(qs('sDays'))qs('sDays').textContent=total;if(qs('sStreak'))qs('sStreak').textContent=total>0?Math.min(total,30):0;if(qs('s3'))qs('s3').textContent=d.meditation_minutes??0}catch{}
+  qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">DASHBOARD</span><h2>Small progress still counts.</h2></div><div class="stats"><div class="card"><strong id="s1">—</strong><span class="small">Check-ins</span></div><div class="card"><strong id="s2">—</strong><span class="small">Chat messages</span></div><div class="card"><strong id="s3">—</strong><span class="small">Meditation minutes</span></div><div class="card"><strong>120</strong><span class="small">Game variations</span></div></div></div></section>';
+  try{const d=await api('/api/dashboard/'+user.id,{},12000);if(qs('s1'))qs('s1').textContent=d.checkins??0;if(qs('s2'))qs('s2').textContent=d.chat_messages??0;if(qs('s3'))qs('s3').textContent=d.meditation_minutes??0}catch{}
 }
 function profile(){
   const lang=window.appLanguage||user.language||'English',avatar=user.avatar||'🌿';
-  qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">PROFILE</span><h2>Make Small Steps feel like yours.</h2></div><div class="profile"><div class="card"><h3>Profile</h3><div style="font-size:60px;margin:8px 0">'+avatar+'</div><div class="field"><label>Name</label><input id="pn" value="'+esc(user.full_name||'')+'"></div><div class="field"><label>Email</label><input value="'+esc(user.email||'')+'" disabled></div><button class="btn primary" onclick="saveProfile()">Save profile</button></div><div class="card"><h3>Choose avatar</h3><div class="avatar-grid">'+AVATARS.map(x=>'<button class="avatar '+(x===avatar?'sel':'')+'" onclick="selectProfileAvatar(\''+x+'\',this)">'+x+'</button>').join('')+'</div><div class="field"><label>Language</label><select id="lang">'+LANGS.map(x=>'<option '+(x===lang?'selected':'')+'>'+x+'</option>').join('')+'</select></div><div class="field"><label>Preferred meditation time</label><select id="mt"><option>Morning</option><option>Afternoon</option><option>Night</option><option>Not set</option></select></div><button class="btn soft" onclick="savePrefs()">Save preferences</button></div><div class="card"><h3>Change password</h3><div class="field"><label>Current password</label><input id="old" type="password"></div><div class="field"><label>New password</label><input id="np" type="password"></div><button class="btn primary" onclick="changePw()">Change password</button></div></div></div></section>';
+  qs('main').innerHTML='<section class="view"><div class="wrap"><div class="head"><span class="ey">PROFILE</span><h2>Make Small Steps feel like yours.</h2></div><div class="profile"><div class="card"><h3>Profile</h3><div style="font-size:60px;margin:8px 0">'+avatar+'</div><div class="field"><label>Name</label><input id="pn" value="'+esc(user.full_name||'')+'"></div><div class="field"><label>Email</label><input value="'+esc(user.email||'')+'" disabled></div><button class="btn primary" onclick="saveProfile()">Save profile</button></div><div class="card"><h3>Choose avatar</h3><div class="avatar-grid">'+AVATARS.map(x=>'<button class="avatar '+(x===avatar?'sel':'')+'" onclick="selectProfileAvatar(\''+x+'\',this)">'+x+'</button>').join('')+'</div><div class="field"><label>Language</label><select id="lang">'+LANGS.map(x=>'<option '+(x===lang?'selected':'')+'>'+x+'</option>').join('')+'</select></div><div class="field"><label>Preferred meditation time</label><select id="mt"><option>Morning</option><option>Afternoon</option><option>Night</option><option>Not set</option></select></div><button class="btn soft" onclick="savePrefs()">Save preferences</button></div><div class="card"><h3>Change password</h3><div class="field"><label>Current password</label><input id="old" type="password"></div><div class="field"><label>New password</label><input id="np" type="password"></div><button class="btn primary" onclick="changePw()">Change password</button><p class="small">Password is never stored in localStorage.</p></div></div></div></section>';
 }
 function selectProfileAvatar(a){user.avatar=a;saveSession();profile();toast('Avatar updated.')}
 async function saveProfile(){try{const d=await api('/api/profile/'+user.id,{method:'PUT',body:JSON.stringify({full_name:qs('pn').value})});user=d.user||{...user,full_name:qs('pn').value};saveSession();toast('Profile saved.')}catch(e){user.full_name=qs('pn').value;saveSession();toast('Saved locally; backend update was unavailable.');}}
@@ -528,11 +472,11 @@ function showIntroTour(force=false){
 }
 function warmBackend(){fetch(API+'/docs',{method:'GET',cache:'no-store'}).catch(()=>{});}
 function toast(msg){const d=document.createElement('div');d.style='position:fixed;right:18px;bottom:18px;z-index:200;background:#123b34;color:white;padding:13px 16px;border-radius:13px;box-shadow:0 15px 40px #0002;font-size:13px;max-width:360px';d.textContent=msg;document.body.appendChild(d);setTimeout(()=>d.remove(),4000);}
-function logout(){stopAudio();resetGameRuntime();speechSynthesis?.cancel();clearSession();user=null;checkinRequired=false;viewHistory=[];currentView='home';auth(0,{});}
+function logout(){stopAudio();resetGameRuntime();speechSynthesis?.cancel();clearSession();user=null;viewHistory=[];currentView='home';auth(0,{});}
 
 (function boot(){
   const s=loadSession();
-  if(s?.user){user=s.user;checkinRequired=!!s.checkinRequired;window.appLanguage=s.language||user.language||'English';window.smallStepsTime=s.time_spend||'10 minutes';app(checkinRequired);}
+  if(s?.user){user=s.user;window.appLanguage=s.language||user.language||'English';window.smallStepsTime=s.time_spend||'10 minutes';app();}
   else auth();
 })();
 </script>
