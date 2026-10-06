@@ -1,13 +1,18 @@
+import os
 import mysql.connector
 from mysql.connector import Error
 
 
+# MySQL configuration
+# Values come from environment variables.
+# Local machine and Render can use different databases safely.
+
 DB_CONFIG = {
-    "host": "127.0.0.1",
-    "port": 3306,
-    "user": "root",
-    "password": "SmallSteps@45678",
-    "database": "small_steps",
+    "host": os.getenv("DB_HOST", "127.0.0.1"),
+    "port": int(os.getenv("DB_PORT", "3306")),
+    "user": os.getenv("DB_USER", "root"),
+    "password": os.getenv("DB_PASSWORD", ""),
+    "database": os.getenv("DB_NAME", "small_steps"),
 }
 
 
