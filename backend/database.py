@@ -1,79 +1,144 @@
-import sqlite3
-from pathlib import Path
+import mysql.connector
+from mysql.connector import Error
 
-DB = Path(__file__).parent / "small_steps.db"
+
+DB_CONFIG = {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "root",
+    "password": "SmallSteps@45678",
+    "database": "small_steps",
+}
+
+
+class MySQLConnection:
+    """
+    Compatibility wrapper:
+    Existing main.py uses SQLite-style conn.execute()
+    while the database is MySQL.
+    """
+
+    def __init__(self, connection):
+        self.connection = connection
+
+    def execute(self, query, params=None):
+        # Convert SQLite ? placeholders to MySQL %s
+        query = query.replace("?", "%s")
+
+        cursor = self.connection.cursor(dictionary=True)
+        cursor.execute(query, params or ())
+        return cursor
+
+    def cursor(self):
+        return self.connection.cursor()
+
+    def commit(self):
+        self.connection.commit()
+
+    def rollback(self):
+        self.connection.rollback()
+
+    def close(self):
+        self.connection.close()
 
 
 def get_conn():
-    conn = sqlite3.connect(DB)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA foreign_keys=ON")
-    return conn
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+
+        if conn.is_connected():
+            return MySQLConnection(conn)
+
+    except Error as e:
+        print("MySQL connection error:", e)
+        raise
 
 
 def init_db():
     conn = get_conn()
+    cursor = conn.cursor()
 
-    conn.executescript("""
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        full_name TEXT NOT NULL,
-        email TEXT UNIQUE NOT NULL,
-        password_hash TEXT NOT NULL,
-        user_type TEXT,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP
-    );
+    try:
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            full_name VARCHAR(100) NOT NULL,
+            email VARCHAR(150) UNIQUE NOT NULL,
+            password_hash VARCHAR(255) NOT NULL,
+            user_type VARCHAR(30),
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        """)
 
-    CREATE TABLE IF NOT EXISTS preferences (
-        user_id INTEGER PRIMARY KEY,
-        stress_sources TEXT,
-        other_stress TEXT,
-        meditation_time TEXT,
-        recent_feeling TEXT,
-        meditation_experience TEXT,
-        goals TEXT,
-        support_preference TEXT,
-        language TEXT DEFAULT 'English',
-        FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
-    );
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS preferences (
+            user_id INT PRIMARY KEY,
+            stress_sources TEXT,
+            other_stress TEXT,
+            meditation_time VARCHAR(50),
+            recent_feeling VARCHAR(100),
+            meditation_experience VARCHAR(100),
+            goals TEXT,
+            support_preference VARCHAR(100),
+            language VARCHAR(30) DEFAULT 'English',
+            FOREIGN KEY (user_id)
+                REFERENCES users(id)
+                ON DELETE CASCADE
+        )
+        """)
 
-    CREATE TABLE IF NOT EXISTS checkins (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id INTEGER,
-        mood TEXT,
-        message TEXT,
-        safety_alert INTEGER DEFAULT 0,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY(user_id) REFERENCES users(id)
-    );
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS checkins (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT,
+            mood VARCHAR(50),
+            message TEXT,
+            safety_alert BOOLEAN DEFAULT FALSE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id)
+                REFERENCES users(id)
+        )
+        """)
 
-    CREATE TABLE IF NOT EXISTS chats (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id INTEGER,
-        role TEXT,
-        message TEXT,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY(user_id) REFERENCES users(id)
-    );
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS chats (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT,
+            role VARCHAR(20),
+            message TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id)
+                REFERENCES users(id)
+        )
+        """)
 
-    CREATE TABLE IF NOT EXISTS game_scores (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id INTEGER,
-        game TEXT,
-        score INTEGER,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY(user_id) REFERENCES users(id)
-    );
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS game_scores (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT,
+            game VARCHAR(100),
+            score INT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id)
+                REFERENCES users(id)
+        )
+        """)
 
-    CREATE TABLE IF NOT EXISTS meditation_logs (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id INTEGER,
-        session_name TEXT,
-        duration_seconds INTEGER,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY(user_id) REFERENCES users(id)
-    );
-    """)
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS meditation_logs (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT,
+            session_name VARCHAR(100),
+            duration_seconds INT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id)
+                REFERENCES users(id)
+        )
+        """)
 
-    conn.commit()
-    conn.close()
+        conn.commit()
+        print("MySQL database initialized successfully.")
+
+    finally:
+        cursor.close()
+        conn.close()
